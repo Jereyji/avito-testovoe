@@ -12,3 +12,12 @@ type Purchase struct {
 	MerchID   uuid.UUID
 	CreatedAt time.Time
 }
+
+func NewPurchase(userID, merchID uuid.UUID) *Purchase {
+	return &Purchase{
+		ID:        uuid.New(),
+		UserID:    userID,
+		MerchID:   merchID,
+		CreatedAt: time.Now(),
+	}
+}
